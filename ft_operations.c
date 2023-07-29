@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 09:35:39 by maltun            #+#    #+#             */
-/*   Updated: 2023/07/29 00:13:39 by maltun           ###   ########.fr       */
+/*   Updated: 2023/07/29 03:57:54 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	ft_swap(t_swap *stack, int swapa)
 			tmp = stack->stack_a[0];
 			stack->stack_a[0] = stack->stack_a[1];
 			stack->stack_a[1] = tmp;
+			ft_printf("sa\n");
 		}
-		ft_printf("sa\n");
 	}
 	else
 	{
@@ -33,8 +33,8 @@ void	ft_swap(t_swap *stack, int swapa)
 			tmp = stack->stack_b[0];
 			stack->stack_b[0] = stack->stack_b[1];
 			stack->stack_b[1] = tmp;
+			ft_printf("sb\n");
 		}
-		ft_printf("sb\n");
 	}
 }
 
