@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 18:52:30 by maltun            #+#    #+#             */
-/*   Updated: 2023/07/29 03:59:36 by maltun           ###   ########.fr       */
+/*   Updated: 2023/08/05 22:50:39 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	ft_init(t_swap *swap, char **av, int ac, int shouldfree)
 		}
 	}
 	gofree(av, ac, shouldfree);
+	ft_is_sorted(swap);
 }
 
 int	main(int ac, char **av)
@@ -63,20 +64,6 @@ int	main(int ac, char **av)
 	i = 0;
 	swap = ft_calloc(sizeof(t_swap), 1);
 	check_valid(ac, av, swap);
-	ft_push_b(swap);
-	ft_push_b(swap);
-	ft_push_b(swap);
-	ft_push_b(swap);
-	ft_push_b(swap);
-	ft_push_b(swap);
-	ft_push_b(swap);
-	ft_push_b(swap);
-	ft_push_b(swap);
-	ft_push_b(swap);
-	ft_push_b(swap);
-	ft_push_b(swap);
-	ft_push_b(swap);
-	ft_push_b(swap);
 	ft_push_b(swap);
 	ft_printf("stack a = ");
 	while (i < swap->count_a)

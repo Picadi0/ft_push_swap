@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 22:48:53 by maltun            #+#    #+#             */
-/*   Updated: 2023/07/28 18:46:44 by maltun           ###   ########.fr       */
+/*   Updated: 2023/08/05 22:50:54 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	check_repeats(char **av, t_swap *swap, int ac, int shouldfree)
 			{
 				if (av[i - 1][j - 1] == '\0' && av[o - 1][j - 1] == '\0') 
 				{
-					ft_printf("Error :%s\n", "Values should not repeats");
+					ft_printf("Error : %s\n", "Values should not repeats");
 					gofree(av, ac, shouldfree);
 					exit(0);
 				}
@@ -109,7 +109,7 @@ void	check_valid_v2(char **av, t_swap *swap, int shouldfree)
 	}
 	if (ac == 1)
 	{
-		gofree(av2, ac, shouldfree);
+		check_values(ac - 1, av2, swap, shouldfree);
 		exit(0);
 	}
 	check_values(ac - 1, av2, swap, shouldfree);

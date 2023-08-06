@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 18:52:55 by maltun            #+#    #+#             */
-/*   Updated: 2023/07/29 00:28:25 by maltun           ###   ########.fr       */
+/*   Updated: 2023/08/05 23:03:45 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ void	ft_reverse_rotate_a(t_swap *stack, int printinfo);
 void	ft_reverse_rotate_b(t_swap *stack, int printinfo);
 void	ft_rr(t_swap *stack);
 void	ft_rrr(t_swap *stack);
+void	ft_is_sorted(t_swap *stack);
 
 #endif
