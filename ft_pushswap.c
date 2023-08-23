@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 18:52:30 by maltun            #+#    #+#             */
-/*   Updated: 2023/08/05 22:50:39 by maltun           ###   ########.fr       */
+/*   Updated: 2023/08/22 10:33:29 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,28 +56,34 @@ void	ft_init(t_swap *swap, char **av, int ac, int shouldfree)
 	ft_is_sorted(swap);
 }
 
-int	main(int ac, char **av)
+void	ft_print_stacks(t_swap *stack)
 {
-	int		i;
-	t_swap	*swap;
+	int	i;
 
 	i = 0;
-	swap = ft_calloc(sizeof(t_swap), 1);
-	check_valid(ac, av, swap);
-	ft_push_b(swap);
 	ft_printf("stack a = ");
-	while (i < swap->count_a)
+	while (i < stack->count_a)
 	{
-		ft_printf("%d ", swap->stack_a[i]);
+		ft_printf("%d ", stack->stack_a[i]);
 		i++;
 	}
 	ft_printf("\nstack b = ");
 	i = 0;
-	while (i < swap->count_b)
+	while (i < stack->count_b)
 	{
-		ft_printf("%d ", swap->stack_b[i]);
+		ft_printf("%d ", stack->stack_b[i]);
 		i++;
 	}
 	ft_printf("\n");
+}
+
+int	main(int ac, char **av)
+{
+	t_swap	*stack;
+
+	stack = ft_calloc(sizeof(t_swap), 1);
+	check_valid(ac, av, stack);
+	ft_start_sort(stack);
+	ft_print_stacks(stack);
 	return (0);
 }

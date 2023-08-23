@@ -6,27 +6,71 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 22:21:53 by maltun            #+#    #+#             */
-/*   Updated: 2023/08/06 00:21:15 by maltun           ###   ########.fr       */
+/*   Updated: 2023/08/22 19:22:22 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pushswap.h"
 
-void	ft_is_sorted_2(int *stacka, t_swap *stack)
+void	ft_is_sorted_2(t_swap *stack)
 {
 	int	i;
 
 	i = 0;
 	while (i < stack->count_a && stack->count_a != 1)
 	{
-		if (stack->stack_a[i] == stacka[i] && i + 1 == stack->count_a)
+		if (stack->stack_a[i] != stack->sorted[i])
+			break ;
+		if (i + 1 == stack->count_a)
 		{
-			free(stacka);
+			free(stack->sorted);
 			exit(0);
 		}
 		i++;
 	}
-	free(stacka);
+}
+
+int	ft_issorted(t_swap *stack)
+{
+	int	i;
+
+	i = 0;
+	while (i < stack->count_a)
+	{
+		if (stack->stack_a[i] != stack->sorted[i])
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+void	ft_re_sort(t_swap *stack)
+{
+	int	i;
+	int	j;
+	int	tmp;
+
+	i = 0;
+	if (!stack->sorted)
+		stack->sorted = ft_calloc(stack->count_a, sizeof(int));
+	stack->count_sorted = stack->count_a;
+	while (i++ < stack->count_a)
+		stack->sorted[i - 1] = stack->stack_a[i - 1];
+	i = 0;
+	while (i < stack->count_a)
+	{
+		j = i + 1;
+		while (j++ < stack->count_a)
+		{
+			if (stack->sorted[i] > stack->sorted[j - 1])
+			{
+				tmp = stack->sorted[i];
+				stack->sorted[i] = stack->sorted[j - 1];
+				stack->sorted[j - 1] = tmp;
+			}
+		}
+		i++;
+	}
 }
 
 void	ft_is_sorted(t_swap *stack)
@@ -34,26 +78,26 @@ void	ft_is_sorted(t_swap *stack)
 	int	i;
 	int	j;
 	int	tmp;
-	int	*stacka;
 
 	i = 0;
-	stacka = ft_calloc(stack->count_a, sizeof(int));
+	stack->sorted = ft_calloc(stack->count_a, sizeof(int));
+	stack->count_sorted = stack->count_a;
 	while (i++ < stack->count_a)
-		stacka[i - 1] = stack->stack_a[i - 1];
+		stack->sorted[i - 1] = stack->stack_a[i - 1];
 	i = 0;
 	while (i < stack->count_a)
 	{
 		j = i + 1;
 		while (j++ < stack->count_a)
 		{
-			if (stacka[i] > stacka[j - 1])
+			if (stack->sorted[i] > stack->sorted[j - 1])
 			{
-				tmp = stacka[i];
-				stacka[i] = stacka[j - 1];
-				stacka[j - 1] = tmp;
+				tmp = stack->sorted[i];
+				stack->sorted[i] = stack->sorted[j - 1];
+				stack->sorted[j - 1] = tmp;
 			}
 		}
 		i++;
 	}
-	ft_is_sorted_2(stacka, stack);
+	ft_is_sorted_2(stack);
 }

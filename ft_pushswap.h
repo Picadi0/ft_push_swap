@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 18:52:55 by maltun            #+#    #+#             */
-/*   Updated: 2023/08/05 23:03:45 by maltun           ###   ########.fr       */
+/*   Updated: 2023/08/22 18:22:05 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 
 typedef struct s_swap
 {
+	int	*sorted;
+	int	count_sorted;
 	int	*stack_a;
 	int	*stack_b;
 	int	count_a;
@@ -40,5 +42,9 @@ void	ft_reverse_rotate_b(t_swap *stack, int printinfo);
 void	ft_rr(t_swap *stack);
 void	ft_rrr(t_swap *stack);
 void	ft_is_sorted(t_swap *stack);
+void	ft_start_sort(t_swap *stack);
+char	**until_see_numb(char **av, int ac);
+void	ft_re_sort(t_swap *stack);
+int		ft_issorted(t_swap *stack);
 
 #endif

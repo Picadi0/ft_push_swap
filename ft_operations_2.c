@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 18:44:16 by maltun            #+#    #+#             */
-/*   Updated: 2023/07/29 03:59:14 by maltun           ###   ########.fr       */
+/*   Updated: 2023/08/22 18:30:46 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_push_a_2(t_swap *stack)
 	int	last;
 	int	i;
 
+	if (!stack->count_a)
+		return ;
 	i = 0;
 	last = stack->count_a;
 	while (last)
@@ -40,7 +42,7 @@ void	ft_rotate_a(t_swap *stack, int printinfo)
 	int	i;
 	int	first;
 
-	if (!stack->count_a)
+	if (!stack->count_a || ft_issorted(stack))
 		return ;
 	i = 0;
 	first = stack->stack_a[0];
@@ -59,7 +61,7 @@ void	ft_rotate_b(t_swap *stack, int printinfo)
 	int	i;
 	int	first;
 
-	if (!stack->count_b)
+	if (!stack->count_b || ft_issorted(stack))
 		return ;
 	i = 0;
 	first = stack->stack_b[0];
@@ -75,6 +77,8 @@ void	ft_rotate_b(t_swap *stack, int printinfo)
 
 void	ft_rr(t_swap *stack)
 {
+	if (ft_issorted(stack))
+		return ;
 	ft_rotate_a(stack, 0);
 	ft_rotate_b(stack, 0);
 	ft_printf("rr\n");
@@ -85,6 +89,8 @@ void	ft_reverse_rotate_a(t_swap *stack, int printinfo)
 	int	last;
 	int	lastint;
 
+	if (ft_issorted(stack))
+		return ;
 	last = stack->count_a;
 	lastint = stack->stack_a[last - 1];
 	while (last)

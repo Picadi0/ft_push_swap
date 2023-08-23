@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 22:48:53 by maltun            #+#    #+#             */
-/*   Updated: 2023/08/05 22:50:54 by maltun           ###   ########.fr       */
+/*   Updated: 2023/08/23 03:17:19 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,24 @@
 void	check_int(char **av, int ac, int shouldfree)
 {
 	int	i;
+	int	j;
 
 	i = 0;
+	j = 0;
 	if (!shouldfree)
 		i = 1;
 	while (av[i])
 	{
-		if (ft_strlen(av[i]) > 11 \
-		|| ft_atol(av[i]) > 2147483647 || ft_atol(av[i]) < -2147483648)
+		while (av[i][j] == '0')
+			j++;
+		if (ft_strlen(&av[i][j]) > 11 \
+		|| ft_atol(&av[i][j]) > 2147483647 || ft_atol(&av[i][j]) < -2147483648)
 		{
 			ft_printf("Error : value must be integer\n");
 			gofree(av, ac, shouldfree);
 			exit(0);
 		}
+		j = 0;
 		i++;
 	}
 }
@@ -74,10 +79,11 @@ void	check_values(int ac, char **av, t_swap *swap, int shouldfree)
 		j = 0;
 		while (av[i][j])
 		{
-			if (!(av[i][j] >= '0' && av[i][j] <= '9'))
+			if (!(av[i][j] >= '0' && av[i][j] <= '9' ) && av[i][j] != ' ' )
 			{
 				if (!(j == 0 && av[i][j] == '-' && av[i][1]))
 				{
+					ft_printf("%s\n", av[1]);
 					ft_printf("%s\n", "Error: Malformed input");
 					gofree(av, ac, shouldfree);
 					exit(0);
@@ -103,7 +109,6 @@ void	check_valid_v2(char **av, t_swap *swap, int shouldfree)
 		ac++;
 	if (ac == 0)
 	{
-		ft_printf("%s\n", "Error: no input");
 		gofree(av2, ac, shouldfree);
 		exit(0);
 	}
@@ -122,7 +127,6 @@ void	check_valid(int ac, char **av, t_swap *swap)
 	i = 0;
 	if (ac == 1)
 	{
-		ft_printf("%s\n", "Error: no input");
 		gofree(av, ac, 0);
 		exit(0);
 	}
