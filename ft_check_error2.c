@@ -6,17 +6,41 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 22:21:53 by maltun            #+#    #+#             */
-/*   Updated: 2023/08/22 19:22:22 by maltun           ###   ########.fr       */
+/*   Updated: 2023/09/02 18:37:58 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pushswap.h"
+
+void	last_check(t_swap *stack)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < stack->count_a)
+	{
+		j = i + 1;
+		while (j < stack->count_a)
+		{
+			if (stack->stack_a[i] == stack->stack_a[j])
+			{
+				ft_putstr_fd("Error\n", 2);
+				exit(0);
+			}
+			j++;
+		}
+		i++;
+	}
+}
 
 void	ft_is_sorted_2(t_swap *stack)
 {
 	int	i;
 
 	i = 0;
+	last_check(stack);
 	while (i < stack->count_a && stack->count_a != 1)
 	{
 		if (stack->stack_a[i] != stack->sorted[i])

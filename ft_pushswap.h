@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 18:52:55 by maltun            #+#    #+#             */
-/*   Updated: 2023/08/22 18:22:05 by maltun           ###   ########.fr       */
+/*   Updated: 2023/08/26 16:28:17 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@ typedef struct s_swap
 	int	count_b;
 }	t_swap;
 
+void	ft_caseof_5(t_swap *stack);
+void	ft_caseof_4(t_swap *stack);
+void	ft_caseof_3(t_swap *stack);
+void	concat_all_av(int ac, char **av, t_swap *stack);
+void	check_ifcontain_numb(char **av, int ac, int shouldfree);
+void	check_valid_v2(char *av, t_swap *swap, int shouldfree);
+char	*concat_with_char(char *str1, char *str2, char c);
+void	last_check(t_swap *stack);
 void	check_valid(int ac, char **av, t_swap *swap);
 void	ft_push_b(t_swap *swap);
 void	ft_push_a(t_swap *swap);
