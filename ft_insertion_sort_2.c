@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 17:12:51 by maltun            #+#    #+#             */
-/*   Updated: 2023/09/13 18:24:59 by maltun           ###   ########.fr       */
+/*   Updated: 2023/09/16 01:29:15 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ void	last_stage(t_swap *stack)
 	num = find_biggest_in_stack_b(stack);
 	while (stack->stack_b[0] != num)
 	{
-		if (stack->count_b / 2 >= num_index)
-			ft_reverse_rotate_b(stack, 1);
-		else
+		if (num_index <= stack->count_b / 2)
 			ft_rotate_b(stack, 1);
+		else
+			ft_reverse_rotate_b(stack, 1);
 	}
 	while (stack->count_b)
 		ft_push_a(stack);

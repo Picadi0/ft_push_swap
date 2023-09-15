@@ -72,6 +72,11 @@ void	check_steps(t_swap *stack)
 	int	i;
 
 	i = 0;
+	if (!stack->count_a)
+	{
+		last_stage(stack);
+		return ;
+	}
 	if (!stack->steps)
 		stack->steps = ft_calloc(stack->count_a, sizeof(int));
 	while (i < stack->count_a)
@@ -82,7 +87,6 @@ void	check_steps(t_swap *stack)
 		else
 			stack->steps[i] += i;
 		stack->steps[i] += 1;
-		ft_printf("%d\n", stack->steps[i]);
 		i++;
 	}
 	rotate_stacks_for_push(stack);

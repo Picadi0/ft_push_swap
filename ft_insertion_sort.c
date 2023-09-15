@@ -19,7 +19,7 @@ int	get_smallest_step_index(t_swap *stack)
 	int	ret_index;
 
 	i = 0;
-	ret = stack->stack_a[0];
+	ret = stack->steps[0];
 	ret_index = 0;
 	while (i < stack->count_a)
 	{
@@ -31,6 +31,47 @@ int	get_smallest_step_index(t_swap *stack)
 		i++;
 	}
 	return (ret_index);
+}
+
+void	rotate_until_ready_get_push(t_swap *stack, int num, int num_index)
+{
+	while (stack->stack_b[0] != num)
+	{
+		if (num_index <= stack->count_b / 2)
+			ft_rotate_b(stack, 1);
+		else
+			ft_reverse_rotate_b(stack, 1);
+	}
+	ft_push_b(stack);
+	check_steps(stack);
+}
+
+void	which_will_rotate_in_b(t_swap *stack)
+{
+	int	i;
+	int	ret_index;
+	int	ret;
+	int	flag;
+
+	i = 0;
+	ret = 0;
+	flag = 0;
+	while (i < stack->count_b)
+	{
+		if (stack->stack_b[i] <= stack->stack_a[0] \
+		&& (stack->stack_b[i] >= ret || !ret))
+		{
+			flag = 1;
+			ret = stack->stack_b[i];
+			ret_index = i;
+		}
+		i++;
+	}
+	if (!flag)
+		rotate_until_ready_get_push(stack, \
+		find_biggest_in_stack_b(stack), find_biggest_indx_in_stack_b(stack));
+	else
+		rotate_until_ready_get_push(stack, ret, ret_index);
 }
 
 void	rotate_stacks_for_push(t_swap *stack)
@@ -47,4 +88,5 @@ void	rotate_stacks_for_push(t_swap *stack)
 		else
 			ft_reverse_rotate_a(stack, 1);
 	}
+	which_will_rotate_in_b(stack);
 }
