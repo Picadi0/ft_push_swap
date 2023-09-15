@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 18:52:55 by maltun            #+#    #+#             */
-/*   Updated: 2023/08/26 16:28:17 by maltun           ###   ########.fr       */
+/*   Updated: 2023/09/15 22:06:45 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 typedef struct s_swap
 {
+	int	*steps;
 	int	*sorted;
 	int	count_sorted;
 	int	*stack_a;
@@ -27,6 +28,10 @@ typedef struct s_swap
 	int	count_b;
 }	t_swap;
 
+void	rotate_stacks_for_push(t_swap *stack);
+void	ft_insertion_sort(t_swap *stack);
+void	check_steps(t_swap *stack);
+int		find_biggest_in_stack_b(t_swap *stack);
 void	ft_caseof_5(t_swap *stack);
 void	ft_caseof_4(t_swap *stack);
 void	ft_caseof_3(t_swap *stack);
@@ -54,5 +59,6 @@ void	ft_start_sort(t_swap *stack);
 char	**until_see_numb(char **av, int ac);
 void	ft_re_sort(t_swap *stack);
 int		ft_issorted(t_swap *stack);
+void	ft_insertion_sort(t_swap *stack);
 
 #endif

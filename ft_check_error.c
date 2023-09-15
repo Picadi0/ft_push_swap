@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 22:48:53 by maltun            #+#    #+#             */
-/*   Updated: 2023/09/02 18:37:41 by maltun           ###   ########.fr       */
+/*   Updated: 2023/09/15 17:21:46 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ void	check_repeats(char **av, t_swap *swap, int ac, int shouldfree)
 		while (av[o++])
 		{
 			j = 0;
-			while (av[i - 1][j] == av[o - 1][j] && ++j) 
+			while (av[i - 1][j] == av[o - 1][j] && ++j)
 			{
-				if (av[i - 1][j - 1] == '\0' && av[o - 1][j - 1] == '\0') 
+				if (av[i - 1][j - 1] == '\0' && av[o - 1][j - 1] == '\0')
 				{
 					ft_putstr_fd("Error\n", 2);
 					gofree(av, ac, shouldfree);
