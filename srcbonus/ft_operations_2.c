@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 18:44:16 by maltun            #+#    #+#             */
-/*   Updated: 2023/09/16 00:46:31 by maltun           ###   ########.fr       */
+/*   Updated: 2023/09/16 19:28:10 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	ft_push_a_2(t_swap *stack)
 	}
 	stack->count_a++;
 	stack->count_b--;
-	ft_printf("pa\n");
 }
 
 void	ft_rotate_a(t_swap *stack, int printinfo)
@@ -79,7 +78,6 @@ void	ft_rr(t_swap *stack)
 {
 	ft_rotate_a(stack, 0);
 	ft_rotate_b(stack, 0);
-	ft_printf("rr\n");
 }
 
 void	ft_reverse_rotate_a(t_swap *stack, int printinfo)
