@@ -6,12 +6,12 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 09:35:39 by maltun            #+#    #+#             */
-/*   Updated: 2023/09/16 16:51:12 by maltun           ###   ########.fr       */
+/*   Updated: 2023/09/16 21:34:04 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pushswap.h"
-
+//sa/sb operations
 void	ft_swap(t_swap *stack, int swapa)
 {
 	int	tmp;

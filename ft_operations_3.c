@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 00:25:01 by maltun            #+#    #+#             */
-/*   Updated: 2023/09/16 18:35:02 by maltun           ###   ########.fr       */
+/*   Updated: 2023/09/16 21:42:43 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_reverse_rotate_b(t_swap *stack, int printinfo)
 	}
 	stack->stack_b[0] = lastint;
 	if (printinfo)
-		ft_printf("rra\n");
+		ft_printf("rrb\n");
 }
 
 void	ft_rrr(t_swap *stack)

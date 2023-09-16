@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pushswap.c                                      :+:      :+:    :+:   */
+/*   ft_checker.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 18:52:30 by maltun            #+#    #+#             */
-/*   Updated: 2023/09/16 19:12:28 by maltun           ###   ########.fr       */
+/*   Updated: 2023/09/16 21:44:18 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	sort_as_say(t_swap *stack, char *str)
 	else if (str[0] == 'r' && str[1] == 'a' && str[2] == '\n')
 		ft_rotate_a(stack, 0);
 	else if (str[0] == 'r' && str[1] == 'b' && str[2] == '\n')
-		ft_rotate_a(stack, 0);
+		ft_rotate_b(stack, 0);
 	else if (str[0] == 'r' && str[1] == 'r' && str[2] == 'a')
 		ft_reverse_rotate_a(stack, 0);
 	else if (str[0] == 'r' && str[1] == 'r' && str[2] == 'b')
