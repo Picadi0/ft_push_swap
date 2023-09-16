@@ -6,11 +6,32 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 17:12:51 by maltun            #+#    #+#             */
-/*   Updated: 2023/09/16 01:29:15 by maltun           ###   ########.fr       */
+/*   Updated: 2023/09/16 15:49:33 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_pushswap.h"
+
+int	get_smallest_step_index(t_swap *stack)
+{
+	int	i;
+	int	ret;
+	int	ret_index;
+
+	i = 0;
+	ret = stack->steps[0];
+	ret_index = 0;
+	while (i < stack->count_a)
+	{
+		if (stack->steps[i] < ret)
+		{
+			ret = stack->steps[i];
+			ret_index = i;
+		}
+		i++;
+	}
+	return (ret_index);
+}
 
 int	find_biggest_indx_in_stack_b(t_swap *stack)
 {

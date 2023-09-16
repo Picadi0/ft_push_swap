@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 02:58:46 by maltun            #+#    #+#             */
-/*   Updated: 2023/09/16 14:29:39 by maltun           ###   ########.fr       */
+/*   Updated: 2023/09/16 15:43:44 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,20 @@
 
 int	check_ra_rra(t_swap *stack, int ret_index)
 {
-	if (ret_index >= stack->count_b / 2)
-		return (stack->count_b - ret_index);
+	if (stack->count_b % 2 == 0)
+	{
+		if (ret_index >= stack->count_b / 2)
+			return (stack->count_b - ret_index);
+		else
+			return (ret_index);
+	}
 	else
-		return (ret_index);
+	{
+		if (ret_index >= (stack->count_b + 1) / 2)
+			return (stack->count_b - ret_index);
+		else
+			return (ret_index);
+	}
 }
 
 int	get_stack_b_moves(t_swap *stack, int org_ret_index, int flag)
