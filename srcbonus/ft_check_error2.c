@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 22:21:53 by maltun            #+#    #+#             */
-/*   Updated: 2023/09/02 18:37:58 by maltun           ###   ########.fr       */
+/*   Updated: 2023/09/16 19:40:45 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	ft_is_sorted_2(t_swap *stack)
 			break ;
 		if (i + 1 == stack->count_a)
 		{
+			break ;
 			free(stack->sorted);
 			exit(0);
 		}
