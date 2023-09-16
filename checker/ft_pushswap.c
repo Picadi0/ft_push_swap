@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 18:52:30 by maltun            #+#    #+#             */
-/*   Updated: 2023/09/16 18:33:43 by maltun           ###   ########.fr       */
+/*   Updated: 2023/09/16 19:12:28 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ int	main(int ac, char **av)
 		free(str);
 		str = get_next_line(0);
 	}
-	if (ft_issorted(stack))
+	if (ft_issorted(stack) && !stack->count_b)
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
