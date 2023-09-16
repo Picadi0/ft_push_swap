@@ -6,7 +6,7 @@
 #    By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/30 14:50:06 by maltun            #+#    #+#              #
-#    Updated: 2023/09/16 18:17:04 by maltun           ###   ########.fr        #
+#    Updated: 2023/09/16 18:35:47 by maltun           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,7 @@ clean: rainbow_title
 	@$(MAKE) -C $(PRINTF_DIR) clean
 	@$(MAKE) -C $(PRINTF_DIR)/libft clean
 	@rm -rf $(OBJ)
+	@rm -f checker
 	@echo "$(GREEN)****** Cleaned ******"
 
 fclean: clean
