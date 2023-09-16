@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 18:52:55 by maltun            #+#    #+#             */
-/*   Updated: 2023/09/16 01:29:20 by maltun           ###   ########.fr       */
+/*   Updated: 2023/09/16 03:00:31 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int		find_biggest_indx_in_stack_b(t_swap *stack);
 void	rotate_stacks_for_push(t_swap *stack);
 void	ft_insertion_sort(t_swap *stack);
 void	check_steps(t_swap *stack);
+void	update_steps(t_swap *stack);
+int		find_largesti_after_num(t_swap *stack, int num);
 int		find_biggest_in_stack_b(t_swap *stack);
 void	ft_caseof_5(t_swap *stack);
 void	ft_caseof_4(t_swap *stack);

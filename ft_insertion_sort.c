@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 19:21:17 by maltun            #+#    #+#             */
-/*   Updated: 2023/09/05 00:14:37y maltun           ###   ########.fr       */
+/*   Created: 2023/09/16 03:01:31 by maltun            #+#    #+#             */
+/*   Updated: 2023/09/16 03:01:38 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	which_will_rotate_in_b(t_swap *stack)
 	flag = 0;
 	while (i < stack->count_b)
 	{
-		if (stack->stack_b[i] <= stack->stack_a[0] \
+		if (stack->stack_b[i] <= stack->stack_a[get_smallest_step_index(stack)] \
 		&& (stack->stack_b[i] >= ret || !ret))
 		{
 			flag = 1;
@@ -88,5 +88,6 @@ void	rotate_stacks_for_push(t_swap *stack)
 		else
 			ft_reverse_rotate_a(stack, 1);
 	}
+	update_steps(stack);
 	which_will_rotate_in_b(stack);
 }

@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 16:21:45 by maltun            #+#    #+#             */
-/*   Updated: 2023/09/02 18:38:45 by maltun           ###   ########.fr       */
+/*   Updated: 2023/09/16 03:00:08 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,25 @@ void	check_ifcontain_numb(char **av, int ac, int shouldfree)
 			exit(0);
 		}
 		j = 0;
+		i++;
+	}
+}
+
+void	update_steps(t_swap *stack)
+{
+	int	i;
+
+	i = 0;
+	if (!stack->steps)
+		stack->steps = ft_calloc(stack->count_a, sizeof(int));
+	while (i < stack->count_a)
+	{
+		stack->steps[i] = find_largesti_after_num(stack, stack->stack_a[i]);
+		if (i > stack->count_a / 2)
+			stack->steps[i] += stack->count_a - i;
+		else
+			stack->steps[i] += i;
+		stack->steps[i] += 1;
 		i++;
 	}
 }

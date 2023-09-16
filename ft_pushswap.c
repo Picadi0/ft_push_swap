@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 18:52:30 by maltun            #+#    #+#             */
-/*   Updated: 2023/09/15 22:47:40 by maltun           ###   ########.fr       */
+/*   Updated: 2023/09/16 03:02:05 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,6 @@ int	main(int ac, char **av)
 	stack = ft_calloc(1, sizeof(t_swap));
 	check_valid(ac, av, stack);
 	ft_start_sort(stack);
-	//ft_print_stacks(stack);
 	return (0);
+	ft_print_stacks(stack);
 }
