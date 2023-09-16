@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 18:52:55 by maltun            #+#    #+#             */
-/*   Updated: 2023/09/16 15:49:42 by maltun           ###   ########.fr       */
+/*   Updated: 2023/09/16 20:32:03 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,12 @@ typedef struct s_swap
 	int	*stack_b;
 	int	count_a;
 	int	count_b;
+	int	num;
+	int	num_index;
 }	t_swap;
 
+void	try_rotate_both(t_swap *stack);
+void	start_to_rotate(t_swap *stack, int num, int num_index);
 void	rotate_same_time(t_swap *stack);
 int		get_smallest_step_index(t_swap *stack);
 void	last_stage(t_swap *stack);
