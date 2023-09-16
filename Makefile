@@ -6,7 +6,7 @@
 #    By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/30 14:50:06 by maltun            #+#    #+#              #
-#    Updated: 2023/09/16 18:22:58 by maltun           ###   ########.fr        #
+#    Updated: 2023/09/16 19:20:00 by maltun           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ rainbow_title:
 	@echo "            ░           ░   ░  ░  ░         ░      ░          ░  ░        	$(YELLOW)By maltun$(RESET)"
 	
 bonus:
-	@$(MAKE) -C ./checker
+	@$(MAKE) -C ./srcbonus
 
 libft: rainbow_title
 	@$(MAKE) -C $(PRINTF_DIR)
@@ -59,14 +59,14 @@ $(NAME): $(OBJ)
 clean: rainbow_title
 	@$(MAKE) -C $(PRINTF_DIR) clean
 	@$(MAKE) -C $(PRINTF_DIR)/libft clean
-	@$(MAKE) -C ./checker clean
+	@$(MAKE) -C ./srcbonus clean
 	@rm -rf $(OBJ)
 	@echo "$(GREEN)****** Cleaned ******"
 
 fclean: clean
 	@$(MAKE) -C $(PRINTF_DIR) fclean
 	@$(MAKE) -C $(PRINTF_DIR)/libft fclean
-	@$(MAKE) -C ./checker fclean
+	@$(MAKE) -C ./srcbonus fclean
 	@rm -f push_swap
 
 re: fclean all

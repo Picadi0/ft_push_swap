@@ -6,7 +6,7 @@
 #    By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/30 14:50:06 by maltun            #+#    #+#              #
-#    Updated: 2023/09/16 18:35:47 by maltun           ###   ########.fr        #
+#    Updated: 2023/09/16 19:20:49 by maltun           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -Wall -Wextra -Werror -g #-fsanitize=address
 
 LIBFT_DIR = ./libft
 PRINTF_DIR = ./ft_printf
-PUSHSWAP_SRC = ft_pushswap.c ft_check_error.c ft_operations.c ft_operations_2.c ft_operations_3.c ft_check_error2.c ft_sort_algorithm.c ft_helper_func.c ft_insertion_sort.c ft_insertion_sort_2.c ft_calculate_steps.c get_next_line.c get_next_line_utils.c
+PUSHSWAP_SRC = ft_checker.c ft_check_error.c ft_operations.c ft_operations_2.c ft_operations_3.c ft_check_error2.c ft_sort_algorithm.c ft_helper_func.c ft_insertion_sort.c ft_insertion_sort_2.c ft_calculate_steps.c get_next_line.c get_next_line_utils.c
 
 OBJ=$(PUSHSWAP_SRC:.c=.o)
 
@@ -50,7 +50,7 @@ libft: rainbow_title
 
 $(NAME): $(OBJ) 
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(PRINTF_DIR)/libftprintf.a
-
+	@mv checker ../checker
 .c.o:
 	@$(CC) -c $(CFLAGS) $<
 
@@ -58,13 +58,12 @@ clean: rainbow_title
 	@$(MAKE) -C $(PRINTF_DIR) clean
 	@$(MAKE) -C $(PRINTF_DIR)/libft clean
 	@rm -rf $(OBJ)
-	@rm -f checker
 	@echo "$(GREEN)****** Cleaned ******"
 
 fclean: clean
 	@$(MAKE) -C $(PRINTF_DIR) fclean
 	@$(MAKE) -C $(PRINTF_DIR)/libft fclean
-	@rm -f push_swap
+	@rm -f ../checker
 
 re: fclean all
 
