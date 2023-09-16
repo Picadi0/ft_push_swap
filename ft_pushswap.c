@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 18:52:30 by maltun            #+#    #+#             */
-/*   Updated: 2023/09/16 03:02:05 by maltun           ###   ########.fr       */
+/*   Updated: 2023/09/16 15:06:57 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	ft_start_sort(t_swap *stack)
 	else if (stack->count_a == 5)
 		ft_caseof_5(stack);
 	else if (stack->count_a > 5)
-		ft_insertion_sort(stack);
+		check_steps(stack);
 }
 
 int	main(int ac, char **av)
@@ -98,6 +98,5 @@ int	main(int ac, char **av)
 	stack = ft_calloc(1, sizeof(t_swap));
 	check_valid(ac, av, stack);
 	ft_start_sort(stack);
-	return (0);
-	ft_print_stacks(stack);
+	//ft_print_stacks(stack);
 }

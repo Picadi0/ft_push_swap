@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 18:52:55 by maltun            #+#    #+#             */
-/*   Updated: 2023/09/16 03:00:31 by maltun           ###   ########.fr       */
+/*   Updated: 2023/09/16 14:25:26 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_swap
 	int	count_b;
 }	t_swap;
 
+void	rotate_same_time(t_swap *stack);
 void	last_stage(t_swap *stack);
 void	check_for_same_times(t_swap *stack);
 int		find_biggest_indx_in_stack_b(t_swap *stack);

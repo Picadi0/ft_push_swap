@@ -6,7 +6,7 @@
 /*   By: maltun <maltun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 02:58:46 by maltun            #+#    #+#             */
-/*   Updated: 2023/09/16 03:01:20 by maltun           ###   ########.fr       */
+/*   Updated: 2023/09/16 14:29:39 by maltun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	check_steps(t_swap *stack)
 		stack->steps[i] += 1;
 		i++;
 	}
-	rotate_stacks_for_push(stack);
+	rotate_same_time(stack);
 }
 
 void	ft_insertion_sort(t_swap *stack)
