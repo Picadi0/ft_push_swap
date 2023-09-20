@@ -65,7 +65,7 @@ void	check_ifcontain_numb(char **av, int ac, int shouldfree)
 		{
 			ft_putstr_fd("Error\n", 2);
 			gofree(av, ac, shouldfree);
-			exit(0);
+			exit(2);
 		}
 		j = 0;
 		i++;
