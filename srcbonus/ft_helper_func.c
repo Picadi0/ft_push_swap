@@ -16,7 +16,7 @@ void	ft_error(t_swap *stack)
 {
 	stack->count_a = 31;
 	ft_printf("Error\n");
-	exit(0);
+	exit(2);
 }
 
 char	*concat_with_char(char *str1, char *str2, char c)
